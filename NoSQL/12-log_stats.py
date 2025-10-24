@@ -1,8 +1,6 @@
 #!/usr/bin/env python3
 """ this module provides some stats about nginx logs """
 from pymongo import MongoClient
-
-
 def main():
     """provides some stats about nginx logs"""
     client = MongoClient("mongodb://127.0.0.1:27017")
