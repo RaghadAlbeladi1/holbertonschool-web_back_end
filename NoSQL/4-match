@@ -1,0 +1,2 @@
+// command to find doc with specifc name in a collection
+db.school.find({name:"Holberton school"})
