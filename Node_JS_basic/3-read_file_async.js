@@ -8,13 +8,12 @@ function countStudents(path) {
         return;
       }
 
-      // نقسم الأسطر
       const lines = data
         .split('\n')
         .map((line) => line.trim())
-        .filter((line) => line.length > 0); // نتجاهل الأسطر الفارغة
+        .filter((line) => line.length > 0);
 
-      // أول سطر = header
+      // شيل الهيدر
       lines.shift();
 
       const fieldMap = {};
@@ -30,21 +29,17 @@ function countStudents(path) {
         fieldMap[field].push(firstName);
       }
 
-      // عدد كل الطلاب (بدون الـ header)
       console.log(`Number of students: ${lines.length}`);
 
-      // نطبع عدد الطلاب في كل field
       for (const [field, students] of Object.entries(fieldMap)) {
         console.log(
-          `Number of students in ${field}: ${students.length}. List: ${students.join(', ')}`
+          `Number of students in ${field}: ${students.length}. List: ${students.join(', ')}`,
         );
       }
 
-      // نرجع resolve (ما يهم إيش القيمة، المهم الـ Promise يكمّل)
       resolve();
     });
   });
 }
 
 module.exports = countStudents;
-
